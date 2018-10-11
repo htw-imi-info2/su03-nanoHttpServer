@@ -29,16 +29,16 @@ public class NanoHTTPServer {
 			+ "    <body>"
 			+ "          <div>"
 			+ "              <h1>Willkommen auf meiner <em>Homepage!</em></h1>"
-			+ "              Das bin <em>ich</em>:"
+			+ "              Ein Bild <em>!</em>:"
 			+ "              <reader>"
-			+ "              <img src=photograph.png alt=\"Bild von mir\">"
+			+ "              <img src=\"flickr_5921129497_a50d7b99dc_z.jpg\" alt=\"ein Bild\">"
 			+ "          </div>"
 			+ "          <div>"
 			+ "              Und hier sind <a href=friends.html>meine Freunde.</a>"
 			+ "          </div>" + "    </body>" + "</html>";
 
 	public static void main(String[] args) throws IOException {
-		int port = 4006;
+		int port = 4005;
 		if (args.length > 0)
 			port = Integer.parseInt(args[0]);
 		try (ServerSocket serverSocket = new ServerSocket(port)) {

@@ -32,13 +32,7 @@ public class NanoHTTPServer {
 			+ "    <body>"
 			+ "          <div>"
 			+ "              <h1>Willkommen auf meiner <em>Homepage!</em></h1>"
-			+ "              Das bin <em>ich</em>:"
-			+ "              <reader>"
-			+ "              <img src=photograph.png alt=\"Bild von mir\">"
-			+ "          </div>"
-			+ "          <div>"
-			+ "              Und hier sind <a href=friends.html>meine Freunde.</a>"
-			+ "          </div>" + "    </body>" + "</html>";
+		+ "          </div>" + "    </body>" + "</html>";
 
 	public static void main(String[] args) throws IOException {
 		int port = 4006;
@@ -56,23 +50,8 @@ public class NanoHTTPServer {
 								new OutputStreamWriter(output))) {
 					System.out.println("-------------------- request from "
 							+ socket.getRemoteSocketAddress());
-					String requestedFile = null;
-					// Request-Header empfangen und ausgeben
-					boolean first_line = true;
-					for (String line = reader.readLine(); !line.isEmpty(); line = reader
-							.readLine()) {
-						System.out.println("read line: " + line);
-						if (first_line) {
-							System.out.println("first line");
-							String[] tokens = line.split("\\s");
-							System.out.println("VERB: " + tokens[0]);
-							System.out.println("requesting file " + tokens[1]);
-							requestedFile = tokens[1];
-							first_line = false;
-						}
-					}
-					if ("/".equals(requestedFile))
-						requestedFile = "index.html";
+				
+					String requestedFile = readFileNameFromRequest(reader);
 					try {
 						String content = responseBody;
 						if (requestedFile != null) {
@@ -103,6 +82,27 @@ public class NanoHTTPServer {
 				}
 			}
 		}
+	}
+
+	private static String readFileNameFromRequest(BufferedReader reader) throws IOException {
+		String requestedFile = null;
+		// Request-Header empfangen und ausgeben
+		boolean first_line = true;
+		for (String line = reader.readLine(); !line.isEmpty(); line = reader
+				.readLine()) {
+			System.out.println("read line: " + line);
+			if (first_line) {
+				System.out.println("first line");
+				String[] tokens = line.split("\\s");
+				System.out.println("VERB: " + tokens[0]);
+				System.out.println("requesting file " + tokens[1]);
+				requestedFile = tokens[1];
+				first_line = false;
+			}
+		}
+		if ("/".equals(requestedFile))
+			requestedFile = "index.html";
+		return requestedFile;
 	}
 }
 // GET /infotext.html HTTP/1.1
