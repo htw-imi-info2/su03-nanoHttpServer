@@ -20,7 +20,7 @@ import java.nio.file.Paths;
  * And then radically refactored.
  * 
  * @author Reinhard Schiedermeier
- * @author Barbara Kleinen
+ * @author Barne Kleinen
  * 
  *         Starting to actually hand out files...
  */
