@@ -35,6 +35,7 @@ public class HttpRequest {
 	}
 
 	private String getRequestedResourceName() {
+		// GET /index.html HTTP/1.1
 		String[] tokens = firstLine.split("\\s");
 		return tokens[1];
 	}

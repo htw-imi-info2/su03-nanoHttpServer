@@ -25,7 +25,7 @@ import java.net.Socket;
 public class NanoHttpServer {
 
 	public static void main(String[] args) throws IOException {
-		int port = 4006;
+		int port = 5005;
 		if (args.length > 0)
 			port = Integer.parseInt(args[0]);
 

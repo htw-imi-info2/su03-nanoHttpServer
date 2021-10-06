@@ -27,7 +27,7 @@ import java.nio.file.Paths;
 public class NanoHttpServer {
 
 	public static void main(String[] args) throws IOException {
-		int port = 4007;
+		int port = 5004;
 		if (args.length > 0)
 			port = Integer.parseInt(args[0]);
 

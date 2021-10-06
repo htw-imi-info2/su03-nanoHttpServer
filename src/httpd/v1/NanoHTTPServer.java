@@ -18,6 +18,7 @@ import java.net.Socket;
  * of the Book "Programmieren mit Java II", Pearson.
  * http://sol.cs.hm.edu/4129/
  * http://sol.cs.hm.edu/4129/html/384-minimalerwebserver.xhtml
+ * Licence: Creative Commons by-nc-sa 3.0, http://sol.cs.hm.edu/4129/html/009-lizenz.xhtml
  * With a slight modification in the args handling.
  * @author Reinhard Schiedermeier
  */
@@ -36,7 +37,7 @@ public class NanoHTTPServer {
 			+ "</html>";
 
 	public static void main(String[] args) throws IOException {
-		int port = 4004;
+		int port = 5001;
 		if (args.length > 0)
 			port = Integer.parseInt(args[0]);
 		try (ServerSocket serverSocket = new ServerSocket(port)) {

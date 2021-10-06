@@ -38,7 +38,7 @@ public class NanoHTTPServer {
 			+ "          </div>" + "    </body>" + "</html>";
 
 	public static void main(String[] args) throws IOException {
-		int port = 4005;
+		int port = 5002;
 		if (args.length > 0)
 			port = Integer.parseInt(args[0]);
 		try (ServerSocket serverSocket = new ServerSocket(port)) {
