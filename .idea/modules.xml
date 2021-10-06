@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Su03_WebServer.iml" filepath="$PROJECT_DIR$/Su03_WebServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NanoWebServer.iml" filepath="$PROJECT_DIR$/NanoWebServer.iml" />
     </modules>
   </component>
 </project>
